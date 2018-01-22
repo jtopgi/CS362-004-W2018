@@ -646,7 +646,7 @@ int getCost(int cardNumber)
 int adventurerEffect(int drawntreasure, struct gameState *state, int currentPlayer, int temphand[], int z) {
   while(drawntreasure<2){
     if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
-      shuffle(currentPlayer, state);
+      // shuffle(currentPlayer, state); //intentional bug
     }
     drawCard(currentPlayer, state);
     int cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
@@ -667,7 +667,7 @@ int adventurerEffect(int drawntreasure, struct gameState *state, int currentPlay
 
 int council_roomEffect(int currentPlayer, struct gameState *state, int handPos) {
   //+4 Cards
-  for (int i = 0; i < 4; i++)
+  for (int i = 0; i < 3; i++) //intentional bug
   {
     drawCard(currentPlayer, state);
   }
@@ -696,7 +696,7 @@ int gardensEffect() {
 
 int smithyEffect(int currentPlayer, struct gameState *state, int handPos) {
   //+3 Cards
-  for (int i = 0; i < 3; i++)
+  for (int i = 0; i < 4; i++) //intentional bug
   {
     drawCard(currentPlayer, state);
   }
@@ -711,7 +711,7 @@ int villageEffect(int currentPlayer, struct gameState *state, int handPos) {
   drawCard(currentPlayer, state);
 
   //+2 Actions
-  state->numActions = state->numActions + 2;
+  state->numActions = state->numActions + 3; //intentional bug
 
   //discard played card from hand
   discardCard(handPos, currentPlayer, state, 0);
