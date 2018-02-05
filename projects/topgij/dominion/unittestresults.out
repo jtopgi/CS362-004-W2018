@@ -1,0 +1,81 @@
+unittest1
+Testing fullDeckCount function:
+SUCCESS: Started with 10 cards
+SUCCESS: Counts cards in hand
+SUCCESS: Counts discarded cards
+COMPLETE: fullDeckCount function
+File 'dominion.c'
+Lines executed:19.88% of 649
+dominion.c:creating 'dominion.c.gcov'
+
+unittest2
+Testing isGameOver function:
+SUCCESS: Game ends when province cards are empty
+SUCCESS: Game does not end when three supply piles are not empty
+SUCCESS: Game ends when three supply piles are empty
+COMPLETE: isGameOver function
+File 'dominion.c'
+Lines executed:21.73% of 649
+dominion.c:creating 'dominion.c.gcov'
+
+unittest3
+Testing gainCard function:
+SUCCESS: Cannot gain card from empty/unused card pile
+SUCCESS: Added card to deck
+SUCCESS: Added card to hand
+SUCCESS: Added card to discard
+COMPLETE: gainCard function
+File 'dominion.c'
+Lines executed:24.19% of 649
+dominion.c:creating 'dominion.c.gcov'
+
+unittest4
+Testing updateCoins function:
+SUCCESS: Calculated copper properly.
+SUCCESS: Calculated silver properly.
+SUCCESS: Calculated gold properly.
+SUCCESS: Calculated bonus properly.
+COMPLETE: updateCoins function
+File 'dominion.c'
+Lines executed:24.81% of 649
+dominion.c:creating 'dominion.c.gcov'
+
+cardtest1
+Testing adventurer function:
+SUCCESS: adventurer only takes two cards
+SUCCESS: adventurer only takes coins
+COMPLETE: adventurer function
+File 'dominion.c'
+Lines executed:28.04% of 649
+dominion.c:creating 'dominion.c.gcov'
+
+cardtest2
+Testing council_room function:
+SUCCESS: council_room draws 4 cards
+SUCCESS: council_room increases numBuys by 1
+SUCCESS: council_room draws other players 1 card
+SUCCESS: council_room is discarded after play
+COMPLETE: council_room function
+File 'dominion.c'
+Lines executed:30.05% of 649
+dominion.c:creating 'dominion.c.gcov'
+
+cardtest3
+Testing smithy function:
+SUCCESS: smithy draws 3 cards
+SUCCESS: smithy is discarded after play
+COMPLETE: smithy function
+File 'dominion.c'
+Lines executed:31.12% of 649
+dominion.c:creating 'dominion.c.gcov'
+
+cardtest4
+Testing village function:
+SUCCESS: village draws 1 card
+SUCCESS: village is discarded after play
+SUCCESS: village increases actions by 2
+COMPLETE: village function
+File 'dominion.c'
+Lines executed:32.05% of 649
+dominion.c:creating 'dominion.c.gcov'
+
