@@ -667,7 +667,7 @@ int adventurerEffect(int drawntreasure, struct gameState *state, int currentPlay
 
 int council_roomEffect(int currentPlayer, struct gameState *state, int handPos) {
   //+4 Cards
-  for (int i = 0; i < 3; i++) //intentional bug
+  for (int i = 0; i < 4; i++) //intentional bug //fixed
   {
     drawCard(currentPlayer, state);
   }
