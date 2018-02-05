@@ -1,18 +1,14 @@
 //unit test for updateCoins
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include <stdio.h>      /* printf, NULL */
-#include <stdlib.h>     /* srand, rand */
-#include <time.h>       /* time */
+#include <stdio.h>
 
 int main () {
-  srand((unsigned int)time(NULL));
-
   printf("Testing updateCoins function:\n");
   struct gameState G;
   int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
            sea_hag, tribute, smithy};
-  initializeGame(2, k, rand() % 5, &G);
+  initializeGame(2, k, 2, &G);
 
   //test copper
   int preCopper = G.coins;

@@ -1,18 +1,14 @@
 //unit test for gainCard
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include <stdio.h>      /* printf, NULL */
-#include <stdlib.h>     /* srand, rand */
-#include <time.h>       /* time */
+#include <stdio.h>
 
 int main () {
-  srand((unsigned int)time(NULL));
-
   printf("Testing gainCard function:\n");
   struct gameState G;
   int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
            sea_hag, tribute, smithy};
-  initializeGame(2, k, rand() % 5, &G);
+  initializeGame(2, k, 2, &G);
 
   //test for return on empty supply or unused card
   G.supplyCount[adventurer] = 0;
@@ -23,7 +19,7 @@ int main () {
   }
 
   //test for add to deck
-  initializeGame(2, k, rand() % 5, &G);
+  initializeGame(2, k, 2, &G);
   int oldDeckCount =  G.deckCount[0];
   gainCard(adventurer, &G, 1, 0);
   if(G.deckCount[0] > oldDeckCount) {
@@ -33,7 +29,7 @@ int main () {
   }
 
   //test for add to hand
-  initializeGame(2, k, rand() % 5, &G);
+  initializeGame(2, k, 2, &G);
   int oldHandCount =  G.handCount[0];
   gainCard(adventurer, &G, 2, 0);
   if(G.handCount[0] > oldHandCount) {
@@ -43,7 +39,7 @@ int main () {
   }
 
   //test for add to discard
-  initializeGame(2, k, rand() % 5, &G);
+  initializeGame(2, k, 2, &G);
   int oldDiscardCount =  G.discardCount[0];
   gainCard(adventurer, &G, 0, 0);
   if(G.discardCount[0] > oldDiscardCount) {

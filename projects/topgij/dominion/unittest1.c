@@ -1,18 +1,15 @@
 //unit test for fullDeckCount
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include <stdio.h>      /* printf, NULL */
-#include <stdlib.h>     /* srand, rand */
-#include <time.h>       /* time */
+#include <stdio.h>
 
 int main () {
-  srand(time(0));
 
   printf("Testing fullDeckCount function:\n");
   struct gameState G;
   int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
            sea_hag, tribute, smithy};
-  initializeGame(2, k, rand() % 50, &G);
+  initializeGame(2, k, 2, &G);
 
   int count = 0;
   for (int i = 0; i < 10; i++) {
