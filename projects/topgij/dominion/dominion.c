@@ -646,11 +646,11 @@ int getCost(int cardNumber)
 int adventurerEffect(int drawntreasure, struct gameState *state, int currentPlayer, int temphand[], int z) {
   while(drawntreasure<2){
     if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
-      // shuffle(currentPlayer, state); //intentional bug
+      shuffle(currentPlayer, state);
     }
     drawCard(currentPlayer, state);
     int cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
-    if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+    if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold) //previous intentional bug of not including silver
       drawntreasure++;
     else{
       temphand[z]=cardDrawn;
@@ -741,9 +741,11 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   {
     case adventurer:
       adventurerEffect(drawntreasure, state, currentPlayer, temphand, z);
+      return 0;
 
     case council_room:
       council_roomEffect(currentPlayer, state, handPos);
+      return 0;
 
     case feast:
       //gain card with cost up to 5
