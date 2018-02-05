@@ -6,7 +6,7 @@
 #include <time.h>       /* time */
 
 int main () {
-  srand(time(0));
+  srand((unsigned int)time(NULL));
 
   printf("Testing isGameOver function:\n");
   struct gameState G;
@@ -27,7 +27,7 @@ int main () {
   G.supplyCount[adventurer] = 0;
   G.supplyCount[council_room] = 0;
   //test for failure
-  if(isGameOver(&G)) {
+  if(!isGameOver(&G)) {
     printf("SUCCESS: Game does not end when three supply piles are not empty\n");
   } else {
     printf("ERROR: Game endsend when three supply piles are not empty\n");
