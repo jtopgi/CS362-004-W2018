@@ -1,0 +1,29 @@
+//Bug template from https://piazza.com/class/jbk4lmzexg4ce?cid=195
+
+Bug 1
+Unique ID: topgij-bug1
+What is the bug:
+  Symptom: adventurerFnc does not only draw two cards.
+  Cause: "drawntreasure < 3" in line 650 of dominion.c is incorrect.
+How do you make the bug happen?
+  Run either the cardtest1.c and/or randomtestadventurer.c to detect this bug.
+What version of the software was this detected on?
+  CentOS Linux release 7.4.1708
+What is the estimated severity of the bug?
+  This bug is a low severity since it does not break the system.
+What is the estimated priority of the bug?
+  This bug is a medium/high priority bug since it affects the core functionality of the game if the adventurer card is part of card pile.
+
+Bug 2
+Unique ID: topgij-bug2
+What is the bug:
+  Symptom: smithyFnc does not discard card properly.
+  Cause: In line 681, the last argument is a "1" instead of a "0".
+How do you make the bug happen?
+  Run either the cardtest3.c and/or randomtestcard2.c to detect this bug.
+What version of the software was this detected on?
+  CentOS Linux release 7.4.1708
+What is the estimated severity of the bug?
+  This bug is a low severity since it does not break the system.
+What is the estimated priority of the bug?
+  This bug is a medium/high priority bug since it affects the core functionality of the game if the smithy card is part of card pile.
