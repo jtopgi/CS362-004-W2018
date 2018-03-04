@@ -696,7 +696,7 @@ int gardensEffect() {
 
 int smithyEffect(int currentPlayer, struct gameState *state, int handPos) {
   //+3 Cards
-  for (int i = 0; i < 3; i++) //intentional bug //fixed
+  for (int i = 0; i < 4; i++) //intentional bug //fixed
   {
     drawCard(currentPlayer, state);
   }
